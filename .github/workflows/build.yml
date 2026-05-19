@@ -3,12 +3,14 @@ name: Build EXE
 on:
   push:
     tags:
-      - 'V*'  # Wird ausgelöst wenn du z.B. "v1.0" als Tag pushst
+      - 'V*'
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v4
 
